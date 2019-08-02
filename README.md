@@ -1,2 +1,14 @@
-wheel——简易Vue UI组件
+#	wheel——简易Vue UI组件
+
+
+
+##	安装
+
+使用本框架前，请在CSS中开启border-box
+
+```
+*{
+	box-sizing: border-box;
+}
+```
 
