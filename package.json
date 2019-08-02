@@ -1,0 +1,23 @@
+{
+  "name": "wheel",
+  "version": "0.0.1",
+  "description": "Vue UI component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MambaNeverOut/wheel.git"
+  },
+  "keywords": [
+    "vue",
+    "ui"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MambaNeverOut/wheel/issues"
+  },
+  "homepage": "https://github.com/MambaNeverOut/wheel#readme"
+}
