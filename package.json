@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/MambaNeverOut/wheel/issues"
   },
-  "homepage": "https://github.com/MambaNeverOut/wheel#readme"
+  "homepage": "https://github.com/MambaNeverOut/wheel#readme",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
 }
