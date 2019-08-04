@@ -32,29 +32,24 @@
       font-size: var(--font-size);
     }
   </style>
-  <style>
-    .icon {
-      width: 1em;
-      height: 1em;
-    }
-  </style>
+
 </head>
 
 <body>
   <div id="app">
-    <g-button icon="settings" icon-position="right">
+    <g-button :loading="loading3" icon="settings" icon-position="right" @click="loading3 = !loading3">
       阿牛
     </g-button>
-    <g-button>
+    <g-button :loading="loading2" @click="loading2 = !loading2">
       阿牛
     </g-button>
-    <g-button icon="settings" icon-position="left">
+    <g-button :loading="loading1" icon="settings" @click="loading1 = !loading1">
       阿牛
     </g-button>
   </div>
 
   <script src="./src/app.js"></script>
-  <script src="//at.alicdn.com/t/font_1331646_0dxcbx63o1l7.js"></script>
+  <script src="//at.alicdn.com/t/font_1331646_82z4blxdtt3.js"></script>
 </body>
 
 </html>

@@ -1,11 +1,10 @@
 <template>
-  <button class="g-button" :class="{[`icon-${iconPosition}`]: true}">
-  <!-- <button class="g-button" :class="{'undefined': true}">
+  <button class="g-button" :class="{[`icon-${iconPosition}`]: true}" @click="$emit('click')">
+    <!-- <button class="g-button" :class="{'undefined': true}">
   <button class="g-button" :class="{'left': true}">
-  <button class="g-button" :class="{'right': true}"> -->
-    <svg v-if="icon" class="icon">
-      <use :xlink:href="`#icon-${icon}`"><use/>
-    </svg>
+    <button class="g-button" :class="{'right': true}">-->
+    <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
+    <g-icon name="loading" class="loading icon" v-if="loading"></g-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -14,16 +13,32 @@
 
 <script>
 export default {
-  props: ['icon', 'iconPosition'],
-  components: {},
-  data() {
-    return {};
-  },
-  methods: {}
+  props: {
+    icon: {},
+    loading: {
+      type: Boolean,
+      default: false
+    },
+    iconPosition: {
+      type: String,
+      default: "left",
+      validator(value) {
+        return value === "left" || value === "right";
+      }
+    }
+  }
 };
 </script>
 
 <style lang='scss' scoped>
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .g-button {
   font-size: var(--font-size);
   height: var(--button-height);
@@ -47,19 +62,22 @@ export default {
   > .content {
     order: 2;
   }
-  > .icon{
+  > .icon {
     order: 1;
-    margin-right: .1em;
+    margin-right: 0.1em;
   }
   &.icon-right {
-    > .content{
+    > .content {
       order: 1;
     }
     > .icon {
       order: 2;
       margin-right: 0;
-      margin-left: .1em;
+      margin-left: 0.1em;
     }
+  }
+  .loading {
+    animation: spin 2s infinite linear;
   }
 }
 </style>
