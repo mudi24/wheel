@@ -51,10 +51,10 @@ export default {
   align-items: center;
   vertical-align: middle;
   &:hover {
-    border-color: var(--button-active-bg);
+    border-color: var(--border-color-hover);
   }
   &:active {
-    background-color: var(--button-active-bg);
+    background-color: var(--border-active-bg);
   }
   &:focus {
     outline: none;
