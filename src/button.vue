@@ -13,6 +13,7 @@
 
 <script>
 export default {
+  name: "WheelButton",
   props: {
     icon: {},
     loading: {
